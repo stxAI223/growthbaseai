@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Growth Base AI — AI automation and consulting for businesses</title>
+<meta name="description" content="Growth Base AI helps businesses find where AI fits, then builds it: automated workflows, custom AI tools and system integrations across sales, operations, support and finance.">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="Growth Base AI — AI automation and consulting">
+<meta property="og:description" content="We find where AI fits in your business, then build the systems that run it.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Growth Base AI — AI automation and consulting">
+<meta name="twitter:description" content="We find where AI fits in your business, then build the systems that run it.">
+<meta name="twitter:image" content="/og-image.png">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#060709">
+
+<!--
+  ===== EDIT THESE =====
+  1. https://calendly.com/salvador-well-sent-mail/ss-growth-automation (3 places): your Cal.com / Calendly URL.
+  2. salvador@ssgrowthautomation.com (2 places): your email.
+  3. Founder photo: put your image in the repo next to this file as  founder.jpg
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #060709;
+    --panel: #0E1117;
+    --panel-2: #141924;
+    --line: rgba(255,255,255,.08);
+    --line-strong: rgba(255,255,255,.16);
+    --text: #E8ECF3;
+    --muted: #8A94A6;
+    --blue: #2F6BFF;
+    --blue-light: #7FA6FF;
+    --blue-dim: rgba(47,107,255,.14);
+    --max: 1120px;
+    --font: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--blue-light); outline-offset: 3px; }
+  ::selection { background: var(--blue); color: #fff; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  /* header */
+  header { position: sticky; top: 0; z-index: 20; background: rgba(6,7,9,.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; position: relative; }
+  header nav { margin-left: auto; }
+  .wordmark { text-decoration: none; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; display: flex; align-items: center; gap: 10px; }
+  .wordmark svg { width: 26px; height: 26px; }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--muted); }
+  nav a:hover { color: var(--text); }
+  nav a.cta { color: #fff; background: var(--blue); border-radius: 8px; padding: 10px 16px; font-weight: 600; }
+  nav a.cta:hover { background: #4a7fff; }
+  .menu-btn { display: none; background: none; border: 1px solid var(--line-strong); color: var(--text); border-radius: 8px; width: 42px; height: 42px; cursor: pointer; align-items: center; justify-content: center; margin-left: 8px; }
+  .menu-btn svg { width: 20px; height: 20px; }
+  .menu-btn .close { display: none; }
+  @media (max-width: 760px) {
+    nav a:not(.cta) { display: none; }
+    .menu-btn { display: inline-flex; }
+    header.open nav { position: absolute; top: 68px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 20px; }
+    header.open nav a { display: block; padding: 14px 0; border-top: 1px solid var(--line); font-size: 17px; }
+    header.open nav a.cta { margin-top: 14px; text-align: center; border-top: 0; }
+    header.open .menu-btn .open-ic { display: none; }
+    header.open .menu-btn .close { display: block; }
+  }
+
+  /* buttons */
+  .btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 16px; padding: 15px 24px; border-radius: 8px; line-height: 1; background: var(--blue); color: #fff; border: 1px solid var(--blue); }
+  .btn:hover { background: #4a7fff; border-color: #4a7fff; }
+  .btn.ghost { background: transparent; color: var(--text); border-color: var(--line-strong); }
+  .btn.ghost:hover { border-color: var(--text); }
+
+  /* hero */
+  .hero-bg { position: relative; overflow: hidden; }
+  .hero-bg::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 70%);
+  }
+  .hero { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; padding: 96px 0 80px; }
+  .hero h1 { margin: 0 0 22px; font-size: clamp(40px, 5.2vw, 62px); line-height: 1.04; font-weight: 700; letter-spacing: -0.03em; text-wrap: balance; }
+  .hero p.lead { font-size: 19px; line-height: 1.55; color: var(--muted); margin: 0 0 32px; max-width: 38ch; }
+  .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero .note { margin: 20px 0 0; font-size: 14px; color: var(--muted); }
+  @media (max-width: 900px) { .hero { grid-template-columns: 1fr; gap: 44px; padding: 64px 0 56px; } .hero p.lead { max-width: none; } }
+
+  /* workflow diagram */
+  .diagram { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px; position: relative; }
+  .diagram-head { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); margin-bottom: 10px; padding: 0 4px; }
+  .diagram-head .live { display: flex; align-items: center; gap: 8px; color: var(--text); font-weight: 500; }
+  .diagram-head .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue-light); box-shadow: 0 0 10px var(--blue); }
+  .diagram svg { width: 100%; height: auto; display: block; }
+  .diagram .node { fill: var(--panel-2); stroke: var(--line-strong); }
+  .diagram .node.ai { stroke: var(--blue); }
+  .diagram .label { fill: var(--text); font-family: var(--font); font-size: 13px; font-weight: 500; }
+  .diagram .sub { fill: var(--muted); font-family: var(--font); font-size: 11px; }
+  .diagram .wire { fill: none; stroke: var(--line-strong); stroke-width: 1.5; }
+  .diagram .flow { fill: none; stroke: var(--blue-light); stroke-width: 1.5; stroke-dasharray: 6 10; animation: dash 1.6s linear infinite; }
+  .diagram .flow.d2 { animation-delay: -.5s; } .diagram .flow.d3 { animation-delay: -1s; }
+  @keyframes dash { to { stroke-dashoffset: -32; } }
+  .diagram .ring { fill: none; stroke: var(--blue); stroke-width: 1; opacity: .35; animation: ring 2.4s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+  @keyframes ring { 0% { transform: scale(.7); opacity: .5; } 100% { transform: scale(1.25); opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .diagram .flow, .diagram .ring { animation: none; } }
+
+  /* facts */
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--panel); }
+  .facts div { padding: 22px 24px; border-right: 1px solid var(--line); }
+  .facts div:last-child { border-right: 0; }
+  .facts strong { display: block; font-size: 24px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 4px; }
+  .facts span { font-size: 14px; color: var(--muted); }
+  @media (max-width: 760px) { .facts { grid-template-columns: 1fr 1fr; } .facts div { border-right: 0; border-bottom: 1px solid var(--line); } .facts div:nth-child(odd) { border-right: 1px solid var(--line); } .facts div:nth-last-child(-n+2) { border-bottom: 0; } }
+
+  /* sections */
+  section { padding: 96px 0; }
+  .section-title { margin: 0 0 14px; font-size: clamp(30px, 3.4vw, 42px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; text-wrap: balance; }
+  .section-intro { margin: 0 0 48px; font-size: 18px; color: var(--muted); max-width: 56ch; }
+  .rule { height: 1px; background: var(--line); }
+
+  /* services list */
+  .services { margin: 0; }
+  .services .row { display: grid; grid-template-columns: 300px 1fr; gap: 32px; padding: 30px 0; border-top: 1px solid var(--line); }
+  .services .row:last-child { border-bottom: 1px solid var(--line); }
+  .services dt { margin: 0; font-size: 23px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; display: flex; gap: 14px; align-items: flex-start; }
+  .services dt .n { flex-shrink: 0; width: 28px; height: 28px; border: 1px solid var(--blue); color: var(--blue-light); border-radius: 6px; font-size: 13px; display: grid; place-items: center; margin-top: 2px; }
+  .services dd { margin: 0; color: var(--muted); font-size: 17px; max-width: 60ch; }
+  .services dd b { color: var(--text); font-weight: 500; }
+  @media (max-width: 760px) { .services .row { grid-template-columns: 1fr; gap: 10px; padding: 24px 0; } .services dt { font-size: 21px; } }
+
+  /* departments grid */
+  .depts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .dept { background: var(--panel); padding: 26px 26px 22px; transition: background .2s ease; }
+  .dept:hover { background: var(--panel-2); }
+  .dept h3 { margin: 0 0 12px; font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+  .dept h3::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: var(--blue); }
+  .dept ul { margin: 0; padding: 0; list-style: none; color: var(--muted); font-size: 15px; }
+  .dept li { padding: 6px 0; border-top: 1px solid var(--line); }
+  .dept li:first-child { border-top: 0; }
+  @media (max-width: 900px) { .depts { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .depts { grid-template-columns: 1fr; } }
+
+  /* process */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; counter-reset: step; }
+  .steps li { counter-increment: step; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 24px; position: relative; transition: border-color .2s ease; }
+  .steps li:hover { border-color: var(--line-strong); }
+  .steps li::before { content: "0" counter(step); display: block; color: var(--blue-light); font-weight: 600; font-size: 13px; margin-bottom: 18px; letter-spacing: .02em; }
+  .steps h3 { margin: 0 0 8px; font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+  .steps p { margin: 0; color: var(--muted); font-size: 15px; }
+  @media (max-width: 900px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+  /* founder */
+  .founder { display: grid; grid-template-columns: 360px 1fr; gap: 64px; align-items: start; }
+  .photo { position: relative; aspect-ratio: 4 / 5; border-radius: 12px; overflow: hidden; background: var(--panel-2); border: 1px solid var(--line); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transition: opacity .6s ease; }
+  .photo img.loaded { opacity: 1; }
+  .photo .fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px; }
+  .photo img:not([src=""]) + .fallback { display: none; }
+  .photo .name-tag { position: absolute; left: 14px; bottom: 14px; background: var(--blue); color: #fff; font-weight: 600; font-size: 14px; padding: 7px 12px; border-radius: 6px; }
+  .founder .role { font-size: 15px; color: var(--blue-light); margin: 0 0 22px; font-weight: 500; }
+  .founder p { font-size: 18px; line-height: 1.6; margin: 0 0 18px; max-width: 54ch; color: #C9D0DB; }
+  .founder blockquote { margin: 28px 0 0; padding: 22px 26px; border-left: 3px solid var(--blue); background: var(--panel); border-radius: 0 10px 10px 0; font-size: 18px; line-height: 1.55; max-width: 54ch; }
+  .founder blockquote footer { margin-top: 10px; font-size: 14px; color: var(--muted); }
+  .stack { margin-top: 32px; }
+  .stack h3 { margin: 0 0 12px; font-size: 14px; font-weight: 500; color: var(--muted); }
+  .stack ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .stack li { border: 1px solid var(--line-strong); border-radius: 6px; padding: 6px 12px; font-size: 14px; color: var(--text); }
+  @media (max-width: 900px) { .founder { grid-template-columns: 1fr; gap: 36px; } .photo { max-width: 360px; } }
+
+  /* testimonials */
+  .sample { display: inline-block; vertical-align: middle; margin-left: 12px; font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--blue-light); border: 1px solid var(--blue); border-radius: 999px; padding: 4px 10px; position: relative; top: -4px; }
+  .results { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 0 0 24px; }
+  .results div { border-top: 2px solid var(--blue); padding-top: 14px; }
+  .results strong { display: block; font-size: 30px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 6px; }
+  .results span { font-size: 14px; color: var(--muted); }
+  @media (max-width: 760px) { .results { grid-template-columns: 1fr 1fr; } }
+  .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .quote { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 26px; display: flex; flex-direction: column; }
+  .quote p { margin: 0 0 20px; font-size: 17px; line-height: 1.55; flex: 1; }
+  .quote p::before { content: "“"; color: var(--blue-light); font-size: 28px; line-height: 0; vertical-align: -8px; margin-right: 4px; }
+  .quote .who { font-size: 14px; color: var(--muted); }
+  .quote .who b { display: block; color: var(--text); font-weight: 600; font-size: 15px; }
+  @media (max-width: 900px) { .quotes { grid-template-columns: 1fr; } }
+
+  /* faq */
+  .faq { max-width: 760px; }
+  .faq details { border-top: 1px solid var(--line); }
+  .faq details:last-child { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; padding: 20px 0; font-size: 19px; font-weight: 500; display: flex; justify-content: space-between; gap: 20px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; font-weight: 400; font-size: 24px; line-height: 1; color: var(--blue-light); flex-shrink: 0; }
+  .faq details[open] summary::after { content: "–"; }
+  .faq details p { margin: 0 0 22px; color: var(--muted); font-size: 16px; max-width: 62ch; }
+
+  /* contact */
+  .contact { border: 1px solid var(--blue); background: linear-gradient(180deg, var(--blue-dim), transparent 70%), var(--panel); border-radius: 16px; padding: 64px 48px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+  .contact h2 { margin: 0 0 14px; }
+  .contact p { margin: 0 0 28px; color: var(--muted); font-size: 18px; max-width: 42ch; }
+  .contact .alt { font-size: 15px; margin: 22px 0 0; }
+  .contact .alt a { color: var(--blue-light); text-underline-offset: 4px; }
+  .contact .checks { list-style: none; margin: 0; padding: 0; font-size: 16px; }
+  .contact .checks li { padding: 12px 0; border-top: 1px solid var(--line); display: flex; gap: 12px; }
+  .contact .checks li:last-child { border-bottom: 1px solid var(--line); }
+  .contact .checks li::before { content: "✓"; color: var(--blue-light); font-weight: 700; }
+  @media (max-width: 860px) { .contact { grid-template-columns: 1fr; padding: 44px 28px; gap: 32px; } }
+
+  /* footer */
+  .site-footer { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; padding: 48px 0 24px; border-top: 1px solid var(--line); font-size: 15px; color: var(--muted); }
+  .site-footer .brand { font-weight: 700; color: var(--text); font-size: 17px; margin: 0 0 8px; display: flex; align-items: center; gap: 8px; }
+  .site-footer .brand svg { width: 20px; height: 20px; }
+  .site-footer p { margin: 0 0 8px; max-width: 36ch; }
+  .site-footer h4 { margin: 0 0 10px; font-size: 14px; font-weight: 600; color: var(--text); }
+  .site-footer ul { list-style: none; margin: 0; padding: 0; }
+  .site-footer li { margin-bottom: 6px; }
+  .site-footer a { text-decoration: none; }
+  .site-footer a:hover { color: var(--text); }
+  .legal { padding: 16px 0 40px; font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  @media (max-width: 700px) { .site-footer { grid-template-columns: 1fr; gap: 24px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="#">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#2F6BFF"/><path d="M44.3 21.7 A16 16 0 1 0 48 32 H35" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="35" cy="32" r="3.6" fill="#fff"/></svg>
+      Growth Base AI
+    </a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#where">Use cases</a>
+      <a href="#process">Process</a>
+      <a href="#founder">About</a>
+      <a href="#faq">FAQ</a>
+      <a class="cta" href="https://calendly.com/salvador-well-sent-mail/ss-growth-automation">Book a consultation</a>
+    </nav>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" onclick="var h=this.closest('header');h.classList.toggle('open');this.setAttribute('aria-expanded',h.classList.contains('open'))">
+      <svg class="open-ic" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
+      <svg class="close" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero-bg">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <h1>AI automation and consulting for businesses that want to run leaner.</h1>
+        <p class="lead">Growth Base AI helps companies work out where AI actually fits, then builds it: automated workflows, custom AI tools and integrations across sales, operations, support and finance.</p>
+        <div class="actions">
+          <a class="btn" href="https://calendly.com/salvador-well-sent-mail/ss-growth-automation">Book a free consultation</a>
+          <a class="btn ghost" href="#services">Explore services</a>
+        </div>
+        <p class="note">30 minutes. You leave with a clear picture of what to automate, in what order, and what it would cost.</p>
+      </div>
+
+      <div class="diagram" aria-label="Diagram of an automated business process">
+        <div class="diagram-head">
+          <div class="live"><span class="dot" aria-hidden="true"></span>Automated process</div>
+          <div>Example</div>
+        </div>
+        <svg viewBox="0 0 520 380" role="img" aria-label="A request comes in, an AI step reads and routes it, and the CRM, email, team chat and reporting are updated automatically.">
+          <!-- wires -->
+          <path class="wire" d="M120 70 C170 70, 170 190, 208 190"/>
+          <path class="flow" d="M120 70 C170 70, 170 190, 208 190"/>
+          <path class="wire" d="M120 190 L208 190"/>
+          <path class="flow d2" d="M120 190 L208 190"/>
+          <path class="wire" d="M120 310 C170 310, 170 190, 208 190"/>
+          <path class="flow d3" d="M120 310 C170 310, 170 190, 208 190"/>
+
+          <path class="wire" d="M312 190 C352 190, 350 50, 400 50"/>
+          <path class="flow d2" d="M312 190 C352 190, 350 50, 400 50"/>
+          <path class="wire" d="M312 190 C352 190, 350 143, 400 143"/>
+          <path class="flow" d="M312 190 C352 190, 350 143, 400 143"/>
+          <path class="wire" d="M312 190 C352 190, 350 237, 400 237"/>
+          <path class="flow d3" d="M312 190 C352 190, 350 237, 400 237"/>
+          <path class="wire" d="M312 190 C352 190, 350 330, 400 330"/>
+          <path class="flow d2" d="M312 190 C352 190, 350 330, 400 330"/>
+
+          <!-- inputs -->
+          <g>
+            <rect class="node" x="20" y="48" width="100" height="44" rx="8"/>
+            <text class="label" x="70" y="67" text-anchor="middle">New email</text>
+            <text class="sub" x="70" y="82" text-anchor="middle">inbox</text>
+          </g>
+          <g>
+            <rect class="node" x="20" y="168" width="100" height="44" rx="8"/>
+            <text class="label" x="70" y="187" text-anchor="middle">Form filled</text>
+            <text class="sub" x="70" y="202" text-anchor="middle">website</text>
+          </g>
+          <g>
+            <rect class="node" x="20" y="288" width="100" height="44" rx="8"/>
+            <text class="label" x="70" y="307" text-anchor="middle">Order placed</text>
+            <text class="sub" x="70" y="322" text-anchor="middle">store</text>
+          </g>
+
+          <!-- AI core -->
+          <g>
+            <circle class="ring" cx="260" cy="190" r="56"/>
+            <rect class="node ai" x="208" y="160" width="104" height="60" rx="10"/>
+            <text class="label" x="260" y="186" text-anchor="middle">AI step</text>
+            <text class="sub" x="260" y="203" text-anchor="middle">reads, decides, routes</text>
+          </g>
+
+          <!-- outputs -->
+          <g>
+            <rect class="node" x="400" y="28" width="100" height="44" rx="8"/>
+            <text class="label" x="450" y="47" text-anchor="middle">CRM updated</text>
+            <text class="sub" x="450" y="62" text-anchor="middle">no manual entry</text>
+          </g>
+          <g>
+            <rect class="node" x="400" y="121" width="100" height="44" rx="8"/>
+            <text class="label" x="450" y="140" text-anchor="middle">Reply drafted</text>
+            <text class="sub" x="450" y="155" text-anchor="middle">ready to approve</text>
+          </g>
+          <g>
+            <rect class="node" x="400" y="215" width="100" height="44" rx="8"/>
+            <text class="label" x="450" y="234" text-anchor="middle">Team notified</text>
+            <text class="sub" x="450" y="249" text-anchor="middle">only if needed</text>
+          </g>
+          <g>
+            <rect class="node" x="400" y="308" width="100" height="44" rx="8"/>
+            <text class="label" x="450" y="327" text-anchor="middle">Logged</text>
+            <text class="sub" x="450" y="342" text-anchor="middle">weekly report</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="facts" aria-label="Company facts">
+      <div><strong>2 years</strong><span>building AI automation for businesses</span></div>
+      <div><strong>Strategy to build</strong><span>one partner from first audit to launch</span></div>
+      <div><strong>Fixed price</strong><span>scoped and agreed before any work starts</span></div>
+      <div><strong>You own it</strong><span>your accounts, your systems, your docs</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="wrap">
+    <h2 class="section-title">What we do</h2>
+    <p class="section-intro">From working out where AI belongs in your business to building and maintaining the systems. Take one piece or the whole thing.</p>
+
+    <dl class="services">
+      <div class="row">
+        <dt><span class="n">1</span>AI consulting and strategy</dt>
+        <dd>We map how work actually moves through your business, find the processes where AI pays for itself, and give you a prioritised roadmap. <b>Honest about what to skip</b>, not just what to buy.</dd>
+      </div>
+      <div class="row">
+        <dt><span class="n">2</span>Process automation</dt>
+        <dd>Repetitive, rules-based work handed to software: data entry, approvals, onboarding, invoicing, reporting, follow-ups. Built in tools like n8n, Make and Zapier, <b>connected to the systems you already use</b>.</dd>
+      </div>
+      <div class="row">
+        <dt><span class="n">3</span>Custom AI solutions</dt>
+        <dd>Assistants, agents and tools built for a specific job: reading documents, drafting proposals, answering staff questions from internal knowledge, handling customer conversations by chat or voice. <b>Scoped tightly</b> so they do one thing reliably.</dd>
+      </div>
+      <div class="row">
+        <dt><span class="n">4</span>Systems integration</dt>
+        <dd>Your CRM, accounting, calendar, inbox, support desk and spreadsheets talking to each other. When something changes in one, <b>the right things happen everywhere else</b>, without a person copying it over.</dd>
+      </div>
+      <div class="row">
+        <dt><span class="n">5</span>Training and ongoing support</dt>
+        <dd>We hand over with documentation and a recorded walkthrough, train your team on the new workflow, and stay available to <b>monitor, fix and extend</b> as the business changes.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<div class="wrap"><div class="rule"></div></div>
+
+<!-- ================= WHERE IT APPLIES ================= -->
+<section id="where">
+  <div class="wrap">
+    <h2 class="section-title">Where it applies</h2>
+    <p class="section-intro">Most businesses have automation opportunities in every department. These are the ones we build most often.</p>
+
+    <div class="depts">
+      <div class="dept"><h3>Sales</h3><ul><li>Lead capture and instant follow-up</li><li>CRM kept up to date automatically</li><li>Proposal and quote generation</li></ul></div>
+      <div class="dept"><h3>Operations</h3><ul><li>Order and job processing</li><li>Approvals and hand-offs between teams</li><li>Scheduling and dispatch</li></ul></div>
+      <div class="dept"><h3>Customer support</h3><ul><li>Ticket triage and routing</li><li>AI answers for common questions</li><li>Escalation with a summary attached</li></ul></div>
+      <div class="dept"><h3>Finance and admin</h3><ul><li>Invoice creation and reminders</li><li>Receipt and document processing</li><li>Monthly reporting assembled for you</li></ul></div>
+      <div class="dept"><h3>Marketing</h3><ul><li>Content drafting in your voice</li><li>Campaign reporting across platforms</li><li>Audience research and enrichment</li></ul></div>
+      <div class="dept"><h3>People and HR</h3><ul><li>Candidate screening and scheduling</li><li>Employee onboarding checklists</li><li>Internal knowledge assistant</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="rule"></div></div>
+
+<!-- ================= PROCESS ================= -->
+<section id="process">
+  <div class="wrap">
+    <h2 class="section-title">How we work</h2>
+    <p class="section-intro">You know what you’re getting, what it costs and when it goes live before anything is built.</p>
+    <ol class="steps">
+      <li><h3>Discovery</h3><p>A free consultation. You walk us through the business; we identify where time and money are leaking and what’s realistic to automate.</p></li>
+      <li><h3>Roadmap</h3><p>A written plan: which processes, which tools, in what order, with a fixed price for each. You sign off before anything starts.</p></li>
+      <li><h3>Build and test</h3><p>Usually one to three weeks per system. You see it run on real data, and we adjust until it behaves exactly as agreed.</p></li>
+      <li><h3>Launch and improve</h3><p>Walkthrough, documentation and thirty days of fixes included. Then ongoing support if you want it monitored and extended.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= CLIENTS (SAMPLE CONTENT) =================
+     These quotes and numbers are sample/demo content.
+     Replace with real client quotes and results, then delete the <span class="sample"> tag. -->
+<section id="clients">
+  <div class="wrap">
+    <h2 class="section-title">Results clients see <span class="sample" title="Demo content. Replace with real client results.">Sample</span></h2>
+    <p class="section-intro">What a typical engagement looks like once the first systems are live.</p>
+
+    <div class="results">
+      <div><strong>40+ hrs</strong><span>of manual work removed per month, per client</span></div>
+      <div><strong>Under 5 min</strong><span>average lead response time, down from hours</span></div>
+      <div><strong>25+</strong><span>automation projects delivered</span></div>
+      <div><strong>2–3 weeks</strong><span>typical time from sign-off to live</span></div>
+    </div>
+
+    <div class="quotes">
+      <div class="quote"><p>We were losing quotes because nobody could get back to people fast enough. Now a request comes in, the proposal is drafted before I’ve finished my coffee, and I just check it and send. It paid for itself inside the first month.</p><div class="who"><b>Daniel R.</b>Owner, residential HVAC company</div></div>
+      <div class="quote"><p>Salvador mapped our whole intake process in one call and told us which half of it wasn’t worth automating yet. That honesty is why we trusted him with the rest. The handover docs were better than what our last software vendor gave us.</p><div class="who"><b>Priya S.</b>Operations manager, dental group</div></div>
+      <div class="quote"><p>Our CRM used to be a graveyard. Now every email, form and call lands in it automatically with notes attached. My sales team stopped complaining about data entry, which I didn’t think was possible.</p><div class="who"><b>Marcus T.</b>Founder, B2B marketing agency</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="rule"></div></div>
+
+<!-- ================= FOUNDER ================= -->
+<section id="founder">
+  <div class="wrap founder">
+    <div class="photo">
+      <img src="founder.jpg" alt="Salvador Santolucito, founder of Growth Base AI" onload="this.classList.add('loaded')" onerror="this.removeAttribute('src')">
+      <div class="fallback">Add founder.jpg next to index.html</div>
+      <span class="name-tag">Salvador Santolucito</span>
+    </div>
+    <div>
+      <h2 class="section-title">About the founder</h2>
+      <p class="role">Salvador Santolucito, founder of Growth Base AI</p>
+      <p>Salvador started building automations for businesses at 15, before “AI automation” was a job title. Over the past two years he has designed and built systems for business owners who were buried in manual work and wanted it handled without hiring for it.</p>
+      <p>He’s 17 now, and he’d rather you hear that from him than find it out later. The age tends to matter less once the system is live and the work it replaced has quietly disappeared.</p>
+      <p>Growth Base AI is the company he built around that work: honest consulting, properly scoped builds, priced up front, and documented so the client owns everything.</p>
+      <blockquote>
+        I got into this because I kept seeing good businesses waste their best people on work a system could do. Those problems are solvable now. I find the right one to solve first, build it, then get out of the way.
+        <footer>Salvador Santolucito</footer>
+      </blockquote>
+      <div class="stack">
+        <h3>Tools we build with</h3>
+        <ul><li>n8n</li><li>Make</li><li>Zapier</li><li>Claude API</li><li>OpenAI API</li><li>Airtable</li><li>Google Workspace</li><li>HubSpot</li><li>Notion</li><li>Slack</li><li>Twilio</li><li>Vapi</li><li>Clay</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="rule"></div></div>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <h2 class="section-title">Questions people ask first</h2>
+    <div class="faq">
+      <details>
+        <summary>We’re not a tech company. Is this for us?</summary>
+        <p>Most of our clients aren’t. If your team spends hours a week on tasks that follow the same steps every time, there’s almost certainly something worth automating. The consultation will tell you what.</p>
+      </details>
+      <details>
+        <summary>Do we need to change the software we use?</summary>
+        <p>Rarely. We build on top of the CRM, inbox, accounting and calendar you already have. If a tool genuinely needs replacing we’ll say so, but that’s the exception.</p>
+      </details>
+      <details>
+        <summary>Is this replacing our staff?</summary>
+        <p>It takes the parts of their day they’d happily give up: data entry, chasing, copying between tools, answering the same question again. The people stay on the work that needs a person.</p>
+      </details>
+      <details>
+        <summary>What happens when the AI gets something wrong?</summary>
+        <p>Every system we build has a clear fallback: it flags a person, takes a message, or waits for approval. AI steps are scoped to decisions they can make reliably, and anything else is routed to a human.</p>
+      </details>
+      <details>
+        <summary>Do we own what you build?</summary>
+        <p>Yes. The accounts are in your name, the workflows live in your workspace, and the documentation is written for someone who isn’t us. You can run it, change it, or hire someone else to.</p>
+      </details>
+      <details>
+        <summary>What does it cost?</summary>
+        <p>The consultation is free. Builds are fixed-price, scoped in writing, and sized to the project; a single workflow and a full department rollout are very different numbers. Running costs are mostly the software platforms’ own fees, which we list in the scope.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h2 class="section-title">Find out where AI fits in your business.</h2>
+        <p>A free 30-minute consultation. Bring the work that’s eating your week, and leave with a plan and a price.</p>
+        <a class="btn" href="https://calendly.com/salvador-well-sent-mail/ss-growth-automation">Book a free consultation</a>
+        <p class="alt">Prefer email? <a href="mailto:salvador@ssgrowthautomation.com">salvador@ssgrowthautomation.com</a></p>
+      </div>
+      <ul class="checks" aria-label="What the consultation includes">
+        <li>A written list of what to automate, in order</li>
+        <li>A fixed-price estimate for each item</li>
+        <li>Clear advice on what isn’t worth doing yet</li>
+        <li>No pressure, no pitch deck</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer class="site-footer">
+    <div>
+      <p class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#2F6BFF"/><path d="M44.3 21.7 A16 16 0 1 0 48 32 H35" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="35" cy="32" r="3.6" fill="#fff"/></svg>Growth Base AI</p>
+      <p>AI automation and consulting for businesses that want to run leaner.</p>
+      <p>Founded by Salvador Santolucito.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">AI consulting and strategy</a></li>
+        <li><a href="#services">Process automation</a></li>
+        <li><a href="#services">Custom AI solutions</a></li>
+        <li><a href="#services">Systems integration</a></li>
+        <li><a href="#services">Training and support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#founder">About the founder</a></li>
+        <li><a href="#process">How we work</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="mailto:salvador@ssgrowthautomation.com">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+  <div class="legal">
+    <span>© 2026 Growth Base AI. All rights reserved.</span>
+    <span><a href="#">Back to top</a></span>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('header nav a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var h = document.querySelector('header'); h.classList.remove('open');
+      var b = h.querySelector('.menu-btn'); if (b) b.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+</body>
+</html>
